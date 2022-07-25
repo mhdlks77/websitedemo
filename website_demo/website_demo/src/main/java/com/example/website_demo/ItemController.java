@@ -11,7 +11,7 @@ public class ItemController {
 
   @GetMapping
   public String getItem(@RequestParam Long id){
-    // Item item = itemRepository.findById(id):
+    // Item item = itemRepository.findById(id);
     Item item = new Item(id, "Hammoudi", 15D, 5);
     return item.getName() + " - " + item.getId();
 
@@ -24,6 +24,17 @@ public class ItemController {
     return item1;
   }
 
+  @PutMapping
+  public Item updateItem(@RequestBody Item item){
+    //itemRepository.save(item);
+    Item item1 = new Item(1L, "Hammoudi", 15D, 5);
+    return item1;
+  }
 
+  @DeleteMapping
+  public void deleteItem(@RequestBody Long id){
+    //itemRepository.delete(id);
+    // return 200;
+  }
   
 }
