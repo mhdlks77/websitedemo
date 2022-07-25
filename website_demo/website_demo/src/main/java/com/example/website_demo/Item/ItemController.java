@@ -9,9 +9,9 @@ public class ItemController {
   private ItemRepository itemRepository;
   
   @GetMapping 
-  public Item getItem(){
-    var item = itemRepository.findAll();
-    return item;
+  public List<Item> getItem(){
+    var items = itemRepository.findAll();
+    return items;
   }
   
   @PostMapping
